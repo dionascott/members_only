@@ -1,0 +1,14 @@
+<% if !signed_in? %>
+<div>
+  You can view the Author's names after signing in.
+</div>
+<% end %>
+<% @posts.each do |posts| %>
+<div>
+  Author: <%= signed_in? ? posts.user.name : "Anon" %>
+</div>
+<div>
+  Content: <%= posts.content %>
+</div>
+  <br/>
+<% end %>
